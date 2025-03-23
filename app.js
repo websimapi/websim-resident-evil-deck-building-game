@@ -21,7 +21,7 @@ const App = () => {
   // Use sync external store for cards
   const userCards = useSyncExternalStore(
     room.collection('card').subscribe,
-    room.collection('card').getList
+    () => room.collection('card').getList()
   );
   
   useEffect(() => {
